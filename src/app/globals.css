@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #f97316;
+  --color-background: #050505;
+}
+
+@layer base {
+  body {
+    background-color: #050505;
+    color: white;
+  }
+}
+
+
+@layer components {
+  .glass-morphism {
+    @apply bg-white/[0.03] backdrop-blur-2xl border border-white/[0.05];
+  }
+}
+
+/* Custom range input styling */
+input[type='range'] {
+  @apply appearance-none bg-white/10 rounded-full h-1.5 outline-none;
+}
+
+input[type='range']::-webkit-slider-thumb {
+  @apply appearance-none w-4 h-4 bg-primary rounded-full cursor-pointer shadow-lg shadow-primary/40 border-2 border-white;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  @apply w-1.5;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-white/10 rounded-full hover:bg-white/20 transition-colors;
+}
